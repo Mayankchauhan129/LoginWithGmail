@@ -8,7 +8,9 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.pages.LoginPage;
@@ -20,7 +22,7 @@ public class LoginPageTest extends LoginPage {
 	String pwd;
 	String url;
 	
-	@BeforeMethod
+	@BeforeTest
 	public void setup() throws IOException, ParseException {
 	JSONParser jsonparser = new JSONParser();
 
@@ -41,7 +43,7 @@ public class LoginPageTest extends LoginPage {
 //		Assert.assertEquals(details, "qaenggtools@gmail.com");
 	}
 	
-	@AfterMethod
+	@AfterTest
 	public void afterTest() {
 		driver.quit();			
 	}
